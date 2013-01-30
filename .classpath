@@ -11,5 +11,15 @@
 	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-email-1.2-javadoc.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-email-1.2-sources.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/icefaces-compat.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/icefaces.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/javax.faces.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jxl.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/krysalis-jCharts-1.0.0-alpha-1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
