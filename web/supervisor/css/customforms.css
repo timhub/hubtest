@@ -1,0 +1,98 @@
+/*** Inputs ***/
+ .jqTransformInputWrapper{background:transparent url(../images/customform/input_left.gif) no-repeat left top;height:20px;float:left;margin:4px 0;padding:0}
+.jqTransformInputInner{background:transparent url(../images/customform/input_right.gif) no-repeat right top;line-height:normal;margin:0 0 0 2px;padding:1px 2px 1px 2px}
+.jqTransformInputInner div{height:20px;line-height:normal}
+.jqTransformInputInner input{font-family:Arial, Verdana, Helvetica, sans-serif;line-height:normal;vertical-align:middle;height:20px;color:#404040;border:none;background:transparent;margin:0;padding:0}
+
+/*** IE6 ***/
+* html .jqTransformInputInner input{font-family:Arial, Verdana, Helvetica, sans-serif;line-height:normal;vertical-align:middle;height:20px;color:#404040;border:0;background:transparent;margin:0;padding:2px 0 0}
+.jqTransformSafari .jqTransformInputInner div{position:relative;overflow:hidden}
+.jqTransformSafari input{background-color:none;position:absolute;top:-10px;left:-2px;height:42px;padding-left:4px}
+
+/**Calendar**/
+input[type='text'].calendar{ border: solid #b6b6b6; border-width:1px 0px 1px 1px; background: #fff; color:#6d6c6a; background:url(../images/customform/textbox_bg.jpg) left top  repeat-x; height:14px;}
+input.login{border: solid #b6b6b6; border-width:1px 0px 1px 1px; background: #fff; color:#6d6c6a; background:url(../images/customform/textbox_bg.jpg) left top  repeat-x; height:48px; width:340px; margin-bottom:40px;}
+.calendar_icon{background:url(../images/icons/calendar_icon.png) no-repeat; height:21px; float:right; width:18px; padding:0px; margin:0px; border:red;}
+
+
+/*** Textarea ***/
+table.jqTransformTextarea td{font-size:1px;line-height:1px;width:5px;height:7px;margin:0;padding:0}
+table.jqTransformTextarea textarea{border:0;background:none;overflow:hidden;margin:0;padding:0}
+table.jqTransformTextarea td#jqTransformTextarea-tl{background:url(../images/customform/textarea-tl.gif) no-repeat bottom left}
+table.jqTransformTextarea td#jqTransformTextarea-tm{background:url(../images/customform/textarea-tm.gif) repeat-x bottom left}
+table.jqTransformTextarea td#jqTransformTextarea-tr{background:url(../images/customform/textarea-tr.gif) no-repeat bottom left}
+table.jqTransformTextarea td#jqTransformTextarea-ml{background:url(../images/customform/textarea-ml.gif) repeat-y top left}
+table.jqTransformTextarea td#jqTransformTextarea-mm{background:url(../images/customform/textarea-mm.gif) repeat top left}
+table.jqTransformTextarea td#jqTransformTextarea-mm textarea{font-size:12px;line-height:16px;color:#404040;}
+table.jqTransformTextarea{margin:4px 0 0 0}
+table.jqTransformTextarea td#jqTransformTextarea-mr{background:url(../images/customform/textarea-mr.gif) repeat-y top left}
+table.jqTransformTextarea td#jqTransformTextarea-bl{background:url(../images/customform/textarea-bl.gif) no-repeat top left}
+table.jqTransformTextarea td#jqTransformTextarea-bm{background:url(../images/customform/textarea-bm.gif) repeat-x top left}
+table.jqTransformTextarea td#jqTransformTextarea-br{background:url(../images/customform/textarea-br.gif) no-repeat top left}
+table.jqTransformTextarea .jqTransformSafariTextarea div{position:relative;overflow:hidden;border:0 solid red}
+table.jqTransformTextarea .jqTransformSafariTextarea textarea{background:none;position:absolute;top:-10px;left:-10px;resize:none;padding:0;}
+
+/*** Radio Buttons ***/
+.jqTransformRadioWrapper{display:block;margin:0 5px 0 0;padding:0;}
+.jqTransformRadio{background:transparent url(../images/customform/radio.png) no-repeat center top;vertical-align:baseline;height:12px;width:12px;display:block}
+
+/*** Checkboxes ***/
+span.jqTransformCheckboxWrapper{display:block;float:left;margin:2px 5px 2px 0;}
+a.jqTransformCheckbox{background:transparent url(../images/customform/checkbox.png) no-repeat center top;vertical-align:middle;height:12px;width:12px;display:block}
+
+/*** Checked ***/
+a.jqTransformChecked{background-position:center bottom}
+
+/*** Selectboxes ***/
+.jqTransformSelectWrapper{width:45px;position:relative;height:21px;background:url(../images/customform/select_left.gif) no-repeat top left;}
+
+.jqTransformSelectWrapper div span{font-family:Arial, Verdana, Helvetica, sans-serif;float:none;position:absolute;width:14px;height:21px;line-height:18px;overflow:hidden;cursor:pointer;padding:2px 0 0 5px; font-size:1.1em; color:#404040; font-weight:normal;}
+
+.jqTransformSelectWrapper a.jqTransformSelectOpen{display:block;position:absolute;right:0;width:23px;height:21px;background:url(../images/customform/select_right.gif) no-repeat right center;}
+
+.jqTransformSelectWrapper ul{position:absolute;width:43px;top:21px;left:0;list-style:none;background-color:#FFF;border:solid 1px #a5a5a5;display:none;overflow:auto;overflow-y:auto;z-index:10;margin:0;padding:0px;text-align:left;height: 150px;border-top:none;}
+.jqTransformSelectWrapper ul a{display:block;text-decoration:none;color:#000;font-family:Tahoma, Arial, Verdana, Helvetica, sans-serif;background-color:#FFF;padding:2px 4px;line-height:normal; font-size:1.1em;}
+.jqTransformSelectWrapper ul a.selected{background:#fff;color:#000}
+
+.jqTransformSelectWrapper ul a:hover,.jqTransformSelectWrapper ul a.selected:hover{background:#0979ba;color:#fff;font-family:Tahoma, Arial, Verdana, Helvetica, sans-serif;}
+.width300{width:300px;}
+.width250{width:250px;}
+.width175{width:175px;}
+.searchwidth1{width:185px;}
+.width150{width:145px;}
+.searchwidth2{width:170px;}
+.searchwidth2s{width:165px;}
+.width92{width:92px;}
+.width80{width:80px;}
+.width55{width:55px;}
+.width30{width:30px;}
+.helpwidth{width:135px;}
+.tablewidth2{width:71px;}
+.selectwidth{width:225px;}
+.searchwidth{width:155px;}
+.width150{width:150px;}
+.width110{width:110px;}
+.width100{width:95px;}
+/*** Hidden ***/
+.jqTransformHidden{display:none}
+.securitydrop{width:500px}
+
+.jqTransformInputWrapper_hover,.jqTransformInputWrapper_focus{background:transparent url(../images/customform/input_left-focus.gif) no-repeat left top}
+
+.jqTransformInputWrapper_hover div.jqTransformInputInner,.jqTransformInputWrapper_focus div.jqTransformInputInner{background:transparent url(../images/customform/input_right-focus.gif) no-repeat right top}
+
+table.jqTransformTextarea-hover td#jqTransformTextarea-tl,table.jqTransformTextarea-focus td#jqTransformTextarea-tl{background-image:url(../images/customform/textarea-tl-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-tm,table.jqTransformTextarea-focus td#jqTransformTextarea-tm{background-image:url(../images/customform/textarea-tm-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-tr,table.jqTransformTextarea-focus td#jqTransformTextarea-tr{background-image:url(../images/customform/textarea-tr-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-ml,table.jqTransformTextarea-focus td#jqTransformTextarea-ml{background-image:url(../images/customform/textarea-ml-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-mm,table.jqTransformTextarea-focus td#jqTransformTextarea-mm{background-image:url(../images/customform/textarea-mm-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-mr,table.jqTransformTextarea-focus td#jqTransformTextarea-mr{background-image:url(../images/customform/textarea-mr-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-bl,table.jqTransformTextarea-focus td#jqTransformTextarea-bl{background-image:url(../images/customform/textarea-bl-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-bm,table.jqTransformTextarea-focus td#jqTransformTextarea-bm{background-image:url(../images/customform/textarea-bm-focus.gif)}
+table.jqTransformTextarea-hover td#jqTransformTextarea-br,table.jqTransformTextarea-focus td#jqTransformTextarea-br{background-image:url(../images/customform/textarea-br-focus.gif)}
+
+
+textarea, input[type='text'], input[type='password'], input[type='file']  { border: 1px solid #b6b6b6; background: #fff; color:#6d6c6a; background:url(../images/customform/textbox_bg.jpg) left top  repeat-x; }
+
+.watermark{color:#999 !important;}
+

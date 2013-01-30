@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="src/poi-3.8-20120326.jar"/>
+	<classpathentry exported="true" kind="lib" path="web/WEB-INF/lib/javacsv.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-email-1.2.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-email-1.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-email-1.2-sources.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

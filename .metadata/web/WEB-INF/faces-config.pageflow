@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12907259557400" configfile="/jobApplication/web/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="178" id="pf13499430091010" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="testpage1.html" x="122" y="562" id="pf13499430091012" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" path="testpage1.html"/>
+  <nodes xsi:type="pageflow:PFPage" name="applicantForm.xhtml" x="554" y="946" id="pf13505395056600" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf13505395056601 pf13505395056602" inlinks="pf13505395056603 pf13505395056604" path="/applicantForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="thankYou.xhtml" x="338" y="754" id="pf13505395056605" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf13505395056603" inlinks="pf13505395056601 pf13521816684820" path="/thankYou.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="noThanks.xhtml" x="338" y="1138" id="pf13505395056606" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13505395056604" inlinks="pf13505395056602 pf13521816684821" path="/noThanks.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="supervisor/branch_detail.xhtml" x="122" y="946" id="pf13521816684822" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13521816684820 pf13521816684821" path="/supervisor/branch_detail.xhtml"/>
+  <links id="pf13505395056601" target="pf13505395056605" source="pf13505395056600" outcome="success"/>
+  <links id="pf13505395056602" target="pf13505395056606" source="pf13505395056600" outcome="failure"/>
+  <links id="pf13505395056603" target="pf13505395056600" source="pf13505395056605"/>
+  <links id="pf13505395056604" target="pf13505395056600" source="pf13505395056606"/>
+  <links id="pf13521816684820" target="pf13505395056605" source="pf13521816684822" outcome="success"/>
+  <links id="pf13521816684821" target="pf13505395056606" source="pf13521816684822" outcome="failure"/>
+</pageflow:Pageflow>

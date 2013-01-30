@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+    <h:head>
+        <title>Job Application</title>
+        <ice:outputStyle href="css/common.css" />
+        <script type="text/javascript" src="../js/jquery1.6.js"></script>      
+        <script type="text/javascript" src="../js/amcharts7.js"></script> 
+        <script type="text/javascript" src="../js/chart/piechart.js"></script> 
+        <script type="text/javascript" src="../js/raphael.js"></script> 
+        <script type="text/javascript" src="../js/easing.js"></script>
+         
+    </h:head>
+    <h:body >
+    
+	<ice:form partialSubmit="true">
+		<ui:param name="backingBean" value="#{emailBackingBean}"></ui:param>
+        <ice:messages globalOnly="true" />
+        
+        <ice:messages globalOnly="true" />
+        
+        <h1>
+        	<ice:outputText value="#{msgs.email_page_header_text}" styleClass="whitetxt"/>
+        </h1>
+        <p/>
+        
+        <table>
+        	<tr>
+        		<td>
+        			<ice:outputText value="#{msgs.email_page_user_email_text}"></ice:outputText>
+        		</td>
+        		<td>
+        			<ice:inputText value="#{backingBean.emailData.userEmail}"></ice:inputText>
+<!--         			<ice:outputText rendered="#{!backingBean.emailAdFlag}" value="#{msgs.email_page_address_alert_text}"/> -->
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>
+        			<ice:outputText value="#{msgs.email_page_email_title}"/>
+        		</td>
+        		<td>
+        			<ice:inputText value="#{backingBean.emailData.emailTitle}"></ice:inputText>
+<!--         			<ice:outputText rendered="#{!backingBean.emailTitleFlag}" value="#{msgs.email_page_title_alert_text}"/> -->
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>
+        			<ice:outputText value="#{msgs.email_page_content_text}"/>
+        		</td>
+        		<td>
+        			<ice:inputText value="#{backingBean.emailData.emailContent}"></ice:inputText>
+<!--         			<ice:outputText rendered="#{!backingBean.emailContentFlag}" value="#{msgs.email_page_content_alert_text}"/> -->
+        		</td>
+        	</tr>
+        	<tr>
+        		<td>
+        			&nbsp;
+        		</td>
+        		<td>
+        			<ice:commandButton value="#{msgs.email_page_submit_button_text}" action="#{backingBean.send}">
+        			</ice:commandButton>
+        			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        			<ice:commandButton value="#{msgs.email_page_cancel_button_text}" action="#{backingBean.clear}">
+        			</ice:commandButton>
+        		</td>
+        	</tr>
+        </table>
+        
+	</ice:form>
+    </h:body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+    <h:head>
+        <title>AllData Supervisor Tool | Client Search</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<script language="javascript" type="text/javascript" src="js/core.js"></script>
+	<script language="javascript" type="text/javascript" src="js/date.js"></script>
+	<script language="javascript" type="text/javascript" src="js/timezone.js"></script>
+	<script language="javascript" type="text/javascript" src="js/customforms.js"></script>
+	<script language="javascript" type="text/javascript" src="js/tablesorter.mod.js"></script>
+	<script language="javascript" type="text/javascript" src="js/tablesorter.widgets.js"></script>
+	<script language="javascript" type="text/javascript" src="js/metadata.js"></script>
+	<script language="javascript" type="text/javascript" src="js/common.js"></script>
+	<script language="javascript" type="text/javascript" src="js/colorbox.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jqgriddata.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="css/customforms.css"  media="all" />
+	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="css/colorbox_new.css" type="text/css" media="screen" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon-med.ico" />
+	<!--[if IE]>
+	    <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection" />
+	  <![endif]-->
+	<script language="javascript" type="text/javascript">
+	//<![CDATA[
+		$(document).ready(function() 
+		{
+			
+		var d = new Date();
+			d2  = d.toString('MM/dd/yy');
+			d = d.toString('ddd MMMM dd yyyy');
+			$('#date').html(d+ ' Pacific Time');
+			$('.updated').html(d2);
+			$('.color_container_blue').corner( "bottom");
+		$('.content_container, #submenu_wrapper').corner("round 5px");
+		$(".popup2").colorbox({width:"650px"});
+		});
+		$(function() { 
+		  // call the tablesorter plugin 
+		  $(".clientlisttable").tablesorter({ 
+		    
+		 
+		    sortList : [[1,0]], 
+		 
+		    // initialize zebra striping and column styling of the table 
+		    widgets: ["zebra", "columns"], 
+		 
+		    widgetOptions: { 
+		      // change the default column class names 
+		      // primary is the first column sorted, secondary is the second, etc 
+		      columns: [ "primary", "secondary", "tertiary" ], 
+		      // include thead when adding class names 
+		      columns_thead : true, 
+		      // include tfoot when adding class names 
+		      columns_tfoot : true 
+		
+		    } 
+		 
+		  }); 
+		
+		
+		  $(".clientlisttable").bind("sortStart",function() 
+		  { }).bind("sortEnd",function() 
+		  { 
+				$(".clientlisttable tr").removeClass("rowmarker");	 		
+				$(".clientlisttable tr:nth-child(2n)").addClass("rowmarker");	 
+					}); 
+				$(".clientlisttable tr:nth-child(2n)").addClass("rowmarker");	 
+		 
+		});
+		
+		$('#form1:export').click(function() {
+            var title = "client data";
+            getXlsFromTbl('clients_table', 'form1:search_results', title, true)
+        });
+		
+		//]]>
+	</script>
+         
+    </h:head>
+    <h:body >
+    	<ice:panelGroup id="header">
+		  <ice:panelGroup styleClass="row_withoutbg">
+		    <ice:panelGroup styleClass="column grid_8">
+		      <h1 id="logo">AllData Supervisor Tool</h1>
+		    </ice:panelGroup>
+		    <ice:panelGroup styleClass="column grid_6">
+		      <ice:panelGroup id="overarching">
+		        <p class="floatright"> 
+		        	Welcome, 
+		        	<a href="javascript:void(0)" title="User's Name" class="separator">eleanore dogan</a> 
+		        	<a href="javascript:void(0)" title="Log out" class="bluecolor">Log out</a>  
+		        </p>
+		      </ice:panelGroup>
+		    </ice:panelGroup>
+		  </ice:panelGroup>
+		</ice:panelGroup>
+		
+		<ui:insert name="supervisor_template"></ui:insert>
+		
+		<ice:panelGroup id="footer" styleClass="row_withoutbg">
+		  <ice:panelGroup styleClass="column grid_14">
+		    <ul id="nav_footer">
+		      <li><a href="javascript:void(0)" title="contact us">Contact Us </a></li>
+		      <li><a href="javascript:void(0)" title="Privacy Policy">Privacy Policy</a></li>
+		      <li class="right">© 2012<img src="images/footer_logo.png" width="180" height="20" alt="CashEdge Logo"/></li>
+		    </ul>
+		  </ice:panelGroup>
+		</ice:panelGroup>
+
+	</h:body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+<h:head>
+    <title>main test panel</title>
+    <ice:outputStyle href="css/common.css" />
+    <script type="text/javascript" src="js/jquery1.6.js"></script>        
+    <script type="text/javascript">
+   
+    </script>
+    
+</h:head>
+<h:body>
+	<ice:form partialSubmit="true">
+	      <ice:panelGroup>
+	      <h1>
+	      	<ice:outputText styleClass="whitetxt" value="MAIN TEST PANEL"/>
+	      </h1>
+	      	
+	      </ice:panelGroup>
+	      <ice:commandLink action="#{userLoginBackingBean.viewDepToolPage}" value="DEP Tools">
+	      </ice:commandLink>
+	      <p/>
+	      <ice:commandLink action="#{userLoginBackingBean.viewEmailPage}" value="Email">
+	      </ice:commandLink>
+	</ice:form>
+</h:body>
+</html>
+

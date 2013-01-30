@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component">
+    <h:head>
+        <title>AllData Supervisor Tool | Client Search</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<script language="javascript" type="text/javascript" src="js/core.js"></script>
+	<script language="javascript" type="text/javascript" src="js/date.js"></script>
+	<script language="javascript" type="text/javascript" src="js/timezone.js"></script>
+	<script language="javascript" type="text/javascript" src="js/customforms.js"></script>
+	<script language="javascript" type="text/javascript" src="js/tablesorter.mod.js"></script>
+	<script language="javascript" type="text/javascript" src="js/tablesorter.widgets.js"></script>
+	<script language="javascript" type="text/javascript" src="js/metadata.js"></script>
+	<script language="javascript" type="text/javascript" src="js/common.js"></script>
+	<script language="javascript" type="text/javascript" src="js/colorbox.js"></script>
+	<script language="javascript" type="text/javascript" src="js/jqgriddata.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="css/customforms.css"  media="all" />
+	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+	<link rel="stylesheet" href="css/colorbox_new.css" type="text/css" media="screen" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon-med.ico" />
+	<!--[if IE]>
+	    <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection" />
+	  <![endif]-->
+	<script language="javascript" type="text/javascript">
+	//<![CDATA[
+		$(document).ready(function() 
+		{
+			
+		var d = new Date();
+			d2  = d.toString('MM/dd/yy');
+			d = d.toString('ddd MMMM dd yyyy');
+			$('#date').html(d+ ' Pacific Time');
+			$('.updated').html(d2);
+			$('.color_container_blue').corner( "bottom");
+		$('.content_container, #submenu_wrapper').corner("round 5px");
+		$(".popup2").colorbox({width:"650px"});
+		});
+		$(function() { 
+		  // call the tablesorter plugin 
+		  $(".clientlisttable").tablesorter({ 
+		    
+		 
+		    sortList : [[1,0]], 
+		 
+		    // initialize zebra striping and column styling of the table 
+		    widgets: ["zebra", "columns"], 
+		 
+		    widgetOptions: { 
+		      // change the default column class names 
+		      // primary is the first column sorted, secondary is the second, etc 
+		      columns: [ "primary", "secondary", "tertiary" ], 
+		      // include thead when adding class names 
+		      columns_thead : true, 
+		      // include tfoot when adding class names 
+		      columns_tfoot : true 
+		
+		    } 
+		 
+		  }); 
+		
+		
+		  $(".clientlisttable").bind("sortStart",function() 
+		  { }).bind("sortEnd",function() 
+		  { 
+				$(".clientlisttable tr").removeClass("rowmarker");	 		
+				$(".clientlisttable tr:nth-child(2n)").addClass("rowmarker");	 
+					}); 
+				$(".clientlisttable tr:nth-child(2n)").addClass("rowmarker");	 
+		 
+		});
+		
+		$('#form1:export').click(function() {
+            var title = "client data";
+            getXlsFromTbl('clients_table', 'form1:search_results', title, true)
+        });
+		
+		//]]>
+	</script>
+         
+    </h:head>
+    <h:body >
+    	<ui:param name="backingbean" value="#{SupervisorBackingBean}"></ui:param>
+    	<ice:panelGroup id="header">
+		  <ice:panelGroup styleClass="row_withoutbg">
+		    <ice:panelGroup styleClass="column grid_8">
+		      <h1 id="logo">AllData Supervisor Tool</h1>
+		    </ice:panelGroup>
+		    <ice:panelGroup styleClass="column grid_6">
+		      <ice:panelGroup id="overarching">
+		        <p class="floatright"> 
+		        	Welcome, 
+		        	<a href="javascript:void(0)" title="User's Name" class="separator">eleanore dogan</a> 
+		        	<a href="javascript:void(0)" title="Log out" class="bluecolor">Log out</a>  
+		        </p>
+		      </ice:panelGroup>
+		    </ice:panelGroup>
+		  </ice:panelGroup>
+		</ice:panelGroup>
+		
+		<ice:panelGroup id="nav_main_wrapper">
+		  <ul id="nav_main">
+		    <li class="client_search_active"><a href="branch_summary.html" title="Summary">Summary</a></li>
+		  </ul>
+		</ice:panelGroup>
+		
+		<ice:form id="form1" name="form1">
+		  <ice:panelGroup styleClass="row">
+		    <!--shadow-->
+		    <ice:panelGroup styleClass="shadow_container">
+		      <!--border-->
+		      <ice:panelGroup styleClass="color_container_blue">
+		        <!-- Sub Navigation-->
+		        <!-- end of Sub Navigation-->
+		        <!--content-->
+		        <ice:panelGroup styleClass="content_container">
+		          <ice:panelGroup styleClass="module_body">
+		            <ice:panelGroup styleClass="topmargin5"><span class="blue big18">Westside Complex</span> <span class="greytext">(1356)</span> </ice:panelGroup>
+		            <ice:panelGroup styleClass="big13 orange topmargin5">Data As Of: <span class="updated_date">2/26/13</span> </ice:panelGroup>
+		            <ice:panelGroup id="search_results" styleClass="topmargin20">
+		              <table width="915" border="0" cellpadding="0" cellspacing="0" class="clientlisttable" id="clients_table">
+		                <thead class="back">
+		                  <tr class="headerRow">
+		                    <th colspan="2" align="left" class="lightgreyheadercolspan sorter-false first" data-column="0"><div class="tablesorter-header-inner">&nbsp;<i class="tablesorter-icon"></i></div></th>
+		                    <th colspan="3" align="center" nowrap="nowrap" class="lightgreyheadercolspan shade1 sorter-false" style="border-top-left-radius: 10px; border-top-right-radius: 10px; " data-column="2"><div class="tablesorter-header-inner">Users<i class="tablesorter-icon"></i></div></th>
+		                    <th colspan="2" align="center" nowrap="nowrap" class="lightgreyheadercolspan shade2 sorter-false" style="border-top-left-radius: 10px; border-top-right-radius: 10px; " data-column="5"><div class="tablesorter-header-inner"><p>REGISTERED CLIENTS</p><i class="tablesorter-icon"></i></div></th>
+		                    <th colspan="5" align="center" nowrap="nowrap" class="lightgreyheadercolspan shade3 sorter-false" style="border-top-left-radius: 10px; border-top-right-radius: 10px; " data-column="7"><div class="tablesorter-header-inner">VALUE OF ACCOUNTS ($M)<i class="tablesorter-icon"></i></div></th>
+		                  </tr>
+		                  <tr >
+		                    <th align="left" class="lightgreyheader"><a href="javascript:void(0)">#</a></th>
+		                    <th align="left" class="lightgreyheader branch"><a href="javascript:void(0)">Name</a></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader"><ice:commandLink href="javascript:void(0)">Total</ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader"><ice:commandLink href="javascript:void(0)">Registered</ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader"><ice:commandLink href="javascript:void(0)">%<br />
+		                      Registered </ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader"><ice:commandLink href="javascript:void(0)">#</ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader"><ice:commandLink href="javascript:void(0)">With <br />
+		                      w/ Held Away</ice:commandLink></th>
+		                    <th  align="center" nowrap="nowrap" class="lightgreyheader "><ice:commandLink href="javascript:void(0)">Internal</ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader">Held Away <br />
+		                      <ice:commandLink href="javascript:void(0)">Aggregated</ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader">Held Away <br />
+		                      <ice:commandLink href="javascript:void(0)">Manual</ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader last"><ice:commandLink href="javascript:void(0)">Total Internal  <br />
+		                      Held Away</ice:commandLink></th>
+		                    <th align="center" nowrap="nowrap" class="lightgreyheader last"><ice:commandLink href="javascript:void(0)">Total<br/>
+		                     #{msgs.temp1}<br /> Held Away</ice:commandLink></th>
+		                  </tr>
+		                </thead>
+		                <tbody style="text-align:center">
+		                	<ui:repeat value="#{backingbean.list}" var="item">
+		                		<tr>
+		                			<td><ice:outputText value="#{item.num}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.branch_name}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.total_branch}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.registered_branch}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.registered_clients}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.registered}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.heldaway_clients}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.internal}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.aggregated}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.heldaway_manual}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.total_heldaway}"></ice:outputText></td>
+		                			<td><ice:outputText value="#{item.total_internal_heldaway}"></ice:outputText></td>		                			
+		                		</tr>
+		                	</ui:repeat>
+		                 
+		                </tbody>
+		                
+		                <tbody>
+		                 <tr class="headerRow">
+		                    <th width="175" align="left" class="lightgreyheader header" data-column="0"><div class="tablesorter-header-inner"><a href="javascript:void(0)">ID #</a><i class="tablesorter-icon"></i></div></th>
+		                    <th width="280" align="left" class="lightgreyheader width280 header" data-column="1"><div class="tablesorter-header-inner"><a href="javascript:void(0)"> Name</a><i class="tablesorter-icon"></i></div></th>
+		                    <th width="60" align="center" valign="top" nowrap="nowrap" class="lightgreyheader border_left header" data-column="2"><div class="tablesorter-header-inner"><a href="javascript:void(0)" class="tooltip " title="">Total</a><i class="tablesorter-icon"></i></div></th>
+		                    <th width="60" align="center" valign="top" nowrap="nowrap" class="lightgreyheader header" data-column="3"><div class="tablesorter-header-inner"><a href="javascript:void(0)" class="tooltip " title="">Registered</a><i class="tablesorter-icon"></i></div></th>
+		                    <th width="60" align="center" valign="top" nowrap="nowrap" class="lightgreyheader header" data-column="4"><div class="tablesorter-header-inner"><a href="javascript:void(0)" class="tooltip " title="">% <br/>
+		                    Registered </a><i class="tablesorter-icon"></i></div></th>
+		                    <th width="60" align="center" valign="top" nowrap="nowrap" class="lightgreyheader header" data-column="5"><div class="tablesorter-header-inner"><a href="javascript:void(0)"> # </a><i class="tablesorter-icon"></i></div></th>
+		                    <th width="60" align="center" nowrap="nowrap" class="lightgreyheader header" data-column="6"><div class="tablesorter-header-inner"> <a href="javascript:void(0)" class="tooltip " title=""> With <br/>
+		                    Held Away</a> <i class="tablesorter-icon"></i></div></th>
+		                    <th width="60" align="center" nowrap="nowrap" class="lightgreyheader header" data-column="7"><div class="tablesorter-header-inner"> <a href="javascript:void(0)" class="tooltip " title="">Internal</a> <i class="tablesorter-icon"></i></div></th>
+		                    <th width="80" align="center" nowrap="nowrap" class="lightgreyheader header" data-column="8"><div class="tablesorter-header-inner"> <a href="javascript:void(0)" class="tooltip " title="">Held Away <br/>
+		                    Aggregated</a> <i class="tablesorter-icon"></i></div></th>
+		                    <th width="80" align="center" nowrap="nowrap" class="lightgreyheader header" data-column="9"><div class="tablesorter-header-inner"> <a href="javascript:void(0)" class="tooltip " title="">Held Away <br/>
+		                    Manual</a> <i class="tablesorter-icon"></i></div></th>
+		                    <th width="80" align="center" nowrap="nowrap" class="lightgreyheader header headerSortUp primary" data-column="10"><div class="tablesorter-header-inner"> <a href="javascript:void(0)">Total<br/>
+		                    Held Away </a> <i class="tablesorter-icon"></i></div></th>
+		                    <th width="80" align="center" nowrap="nowrap" class="lightgreyheader last header" data-column="11"><div class="tablesorter-header-inner"><a href="javascript:void(0)">Total Internal &amp; <br/>
+		                    Held Away</a><i class="tablesorter-icon"></i></div></th>
+		                  </tr>
+			           	</tbody>
+		                <tfoot>
+			                <tr class="total">
+			                    <td align="left" class="left"><strong>1356</strong></td>
+			                    <td class=""><strong> Westside Complex</strong> </td>
+			                    <td width="60" align="center" class="border_left"><strong>45</strong> </td>
+			                    <td width="60" align="center" class=""><strong>24</strong> </td>
+			                    <td width="60" align="center" class="border_right"><strong>53%</strong> </td>
+			                    <td width="60" align="center" class=""><strong>2,183</strong></td>
+			                    <td width="60" align="center" class="border_right"><strong>614</strong></td>
+			                    <td width="60" align="right" class=""><strong>$13.2</strong></td>
+			                    <td width="80" align="right" class=""><strong>$15.5</strong></td>
+			                    <td width="80" align="right" class=""><strong>$8.6</strong></td>
+			                    <td width="80" align="right" class="primary"><strong>$24.1</strong></td>
+			                    <td width="80" align="right" class=""><strong>$37.3</strong></td>
+			                  </tr>
+			           	</tfoot>
+		              </table>
+		              
+		              <ice:panelGroup styleClass="clear"></ice:panelGroup>
+		            </ice:panelGroup>
+		          </ice:panelGroup>
+		        </ice:panelGroup>
+		        <!-- end of content-->
+		      </ice:panelGroup>
+		      <!-- end of border-->
+		    </ice:panelGroup>
+		    <!--end of shadow-->
+		  </ice:panelGroup>
+		  
+		</ice:form>
+		<form method="post" action="fileDownLoadServlet">
+			<div><input type="submit" value="Export"></input></div>
+		</form>
+		<ice:panelGroup id="footer" styleClass="row_withoutbg">
+		  <ice:panelGroup styleClass="column grid_14">
+		    <ul id="nav_footer">
+		      <li><a href="javascript:void(0)" title="contact us">Contact Us </a></li>
+		      <li><a href="javascript:void(0)" title="Privacy Policy">Privacy Policy</a></li>
+		      <li class="right">© 2012<img src="images/footer_logo.png" width="180" height="20" alt="CashEdge Logo"/></li>
+		    </ul>
+		  </ice:panelGroup>
+		</ice:panelGroup>
+    </h:body>
+</html>
