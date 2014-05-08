@@ -8,6 +8,9 @@ import javax.faces.event.ValueChangeEvent;
 import training.jobapplication.bean.model.Applicant;
 import training.jobapplication.bean.support.ProvinceSupport;
 
+/**
+* Author Tim Yang
+*/
 public class ApplicantForm {
 	private Applicant applicant;
 	private ProvinceSupport provinceSupport;
